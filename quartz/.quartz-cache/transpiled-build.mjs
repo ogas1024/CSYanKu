@@ -1259,6 +1259,54 @@ ${stylesheet.join(`
 
       document.head.appendChild(rybbitScript);
     `);componentResources.afterDOMLoaded.push(`
+    function nodeToMarkdown(node) {
+      if (node.nodeType === 3) return node.textContent
+      if (node.nodeType !== 1) return ""
+      const el = node
+
+      // KaTeX display math
+      if (el.classList.contains("katex-display")) {
+        const ann = el.querySelector('annotation[encoding="application/x-tex"]')
+        return ann ? "$$" + ann.textContent.trim() + "$$" : ""
+      }
+      // KaTeX inline math
+      if (el.classList.contains("katex")) {
+        const ann = el.querySelector('annotation[encoding="application/x-tex"]')
+        return ann ? "$" + ann.textContent.trim() + "$" : ""
+      }
+      // Skip images
+      if (el.tagName === "IMG") return ""
+      // Bold
+      if (el.tagName === "STRONG") return "**" + childrenToMd(el) + "**"
+      // Line break
+      if (el.tagName === "BR") return "\\n"
+      // List item
+      if (el.tagName === "LI") return "- " + childrenToMd(el)
+      // Paragraph or div
+      if (el.tagName === "P" || el.tagName === "DIV") return childrenToMd(el)
+
+      return childrenToMd(el)
+    }
+
+    function childrenToMd(el) {
+      let result = ""
+      for (const child of el.childNodes) result += nodeToMarkdown(child)
+      return result
+    }
+
+    function extractBlock(el) {
+      if (!el) return ""
+      // For list elements, handle each item
+      if (el.tagName === "UL" || el.tagName === "OL") {
+        const items = []
+        for (const li of el.children) {
+          if (li.tagName === "LI") items.push(childrenToMd(li))
+        }
+        return items.map(i => "- " + i.trim()).join("\\n")
+      }
+      return childrenToMd(el).trim()
+    }
+
     document.addEventListener("nav", () => {
       const article = document.querySelector("article")
       if (!article) return
@@ -1266,18 +1314,16 @@ ${stylesheet.join(`
       const headings = article.querySelectorAll("h2")
       let tiganH2 = null
       for (const h of headings) {
-        if (h.textContent.trim() === "\u9898\u5E72") {
+        if (h.textContent.trim().startsWith("\u9898\u5E72")) {
           tiganH2 = h
           break
         }
       }
       if (!tiganH2) return
 
-      // Remove existing button (SPA re-nav)
       const existing = article.querySelector(".copy-question-btn")
       if (existing) existing.remove()
 
-      // Create button
       const btn = document.createElement("button")
       btn.className = "copy-question-btn"
       btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>\u590D\u5236\u9898\u76EE</span>'
@@ -1287,55 +1333,49 @@ ${stylesheet.join(`
         e.preventDefault()
         e.stopPropagation()
 
-        // Collect question stem: everything between \u9898\u5E72 h2 and the next h2
-        const nodes = []
+        const parts = []
         let el = tiganH2.nextElementSibling
         while (el && el.tagName !== "H2") {
-          // Skip OCR screenshot callout
           if (el.classList.contains("callout") && el.getAttribute("data-callout") === "note") {
             el = el.nextElementSibling
             continue
           }
-          // For answer callout, extract answer text
           if (el.classList.contains("callout") && el.getAttribute("data-callout") === "success") {
             const content = el.querySelector(".callout-content")
             if (content) {
-              nodes.push("\\n---\\n**\u7B54\u6848\u4E0E\u89E3\u6790**\\n")
-              nodes.push(content.innerText.trim())
+              parts.push("---\\n**\u7B54\u6848\u4E0E\u89E3\u6790**")
+              for (const child of content.children) {
+                const t = extractBlock(child)
+                if (t) parts.push(t)
+              }
             }
             el = el.nextElementSibling
             continue
           }
-          nodes.push(el.innerText.trim())
+          const t = extractBlock(el)
+          if (t) parts.push(t)
           el = el.nextElementSibling
         }
 
         const title = document.querySelector(".article-title")?.textContent?.trim() || ""
-        const text = (title ? "**" + title + "**\\n\\n" : "") + nodes.filter(Boolean).join("\\n\\n")
+        const text = (title ? "**" + title + "**\\n\\n" : "") + parts.filter(Boolean).join("\\n\\n")
 
         try {
           await navigator.clipboard.writeText(text)
-          btn.classList.add("copied")
-          btn.querySelector("span").textContent = "\u5DF2\u590D\u5236"
-          setTimeout(() => {
-            btn.classList.remove("copied")
-            btn.querySelector("span").textContent = "\u590D\u5236\u9898\u76EE"
-          }, 2000)
         } catch {
-          // fallback
           const ta = document.createElement("textarea")
           ta.value = text
           document.body.appendChild(ta)
           ta.select()
           document.execCommand("copy")
           document.body.removeChild(ta)
-          btn.classList.add("copied")
-          btn.querySelector("span").textContent = "\u5DF2\u590D\u5236"
-          setTimeout(() => {
-            btn.classList.remove("copied")
-            btn.querySelector("span").textContent = "\u590D\u5236\u9898\u76EE"
-          }, 2000)
         }
+        btn.classList.add("copied")
+        btn.querySelector("span").textContent = "\u5DF2\u590D\u5236"
+        setTimeout(() => {
+          btn.classList.remove("copied")
+          btn.querySelector("span").textContent = "\u590D\u5236\u9898\u76EE"
+        }, 2000)
       })
     })
   `),cfg.enableSPA?componentResources.afterDOMLoaded.push(spa_inline_default):componentResources.afterDOMLoaded.push(`
