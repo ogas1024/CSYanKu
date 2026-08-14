@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: 考研题库
+  pageTitle: CS考研题库
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: "null"
   locale: zh-CN
-  baseUrl: localhost:8080
+  baseUrl: ogas1024.gihub.io/CSYanKu
   ignorePatterns:
     - .obsidian
     - _templates
