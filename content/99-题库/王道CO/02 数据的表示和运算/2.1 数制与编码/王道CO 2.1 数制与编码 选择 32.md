@@ -1,0 +1,35 @@
+---
+source: 王道CO
+subject: CO
+chapter: 02 数据的表示和运算
+section: 2.1 数制与编码
+qtype: 选择
+topic: []
+answer: D
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+32. 【P32】【2021统考真题】已知有符号整数用补码表示，变量x,y,z的机器数分别为FFFDH,FFDFH,7FFCH，下列结论中，正确的是（）
+
+A. 若 x, y 和 z 为无符号整数，则 z < x < y
+
+B. 若 x, y 和 z 为无符号整数，则 x < y < z
+
+C. 若 x, y 和 z 为有符号整数，则 x < y < z
+
+D. 若 x, y 和 z 为有符号整数，则 y < x < z
+
+> [!note]- 原题截图
+> ![[王道CO 2.1 数制与编码 选择 32.png]]
+
+> [!success]- 答案与解析
+> **答案：** D
+>
+> **解析：** 按 16 位有符号补码解释，x=FFFDH=-3，y=FFDFH=-33，z=7FFCH=32764，因此 $y<x<z$。若按无符号解释则 z<x<y，选项 A、B 均不符。
+
+## 关联
+
+- 知识点：
+- 题型：

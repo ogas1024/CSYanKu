@@ -1,0 +1,35 @@
+---
+source: 王道CO
+subject: CO
+chapter: 04 指令系统
+section: 4.3 程序的机器级代码表示
+qtype: 选择
+topic: []
+answer: C
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+5. 【P187】假设 R[eax]=080480B4H，R[ebx]=00000011H，M[080480F8H]=000000B0H，执行指令 `imul eax,[eax+ebx*4],-16` 后，寄存器或存储单元的内容变为（）
+
+A. R[eax]=00000B00H
+
+B. M[080480F8H]=00000B00H
+
+C. R[eax]=FFFFF500H
+
+D. M[080480F8H]=FFFFF500H
+
+> [!note]- 原题截图
+> ![[王道CO 4.3 程序的机器级代码表示 选择 05.png]]
+
+> [!success]- 答案与解析
+> **答案：** C
+>
+> **解析：** 源地址为 080480B4H+11H*4=080480F8H，源数 000000B0H 与 -16 相乘得 FFFFF500H，结果写入目的寄存器 eax，内存源单元不变。
+
+## 关联
+
+- 知识点：
+- 题型：
