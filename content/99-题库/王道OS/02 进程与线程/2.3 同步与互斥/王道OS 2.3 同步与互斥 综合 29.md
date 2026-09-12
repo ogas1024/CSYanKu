@@ -1,0 +1,42 @@
+---
+source: 王道OS
+subject: OS
+chapter: 02 进程与线程
+section: 2.3 同步与互斥
+qtype: 综合
+topic: []
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+甲、乙、丙三人一起植树，甲负责挖树坑，乙负责将树苗放入树坑并填土，丙负责为新种的树苗浇水。
+
+植树的步骤依次为：挖树坑、放树苗、填土和浇水。
+
+现有铁锹和水桶各1个，铁锹用于挖树坑和填土，水桶用于浇水。
+
+当树坑的数量小于3时，甲才可以挖树坑。
+
+假设初始时树坑的数量为0，铁锹和水桶均可用。
+
+请定义尽可能少的信号量，用wait()、signal()操作描述植树过程中三人之间的同步或互斥关系，并说明所用信号量的作用及其初值。
+
+> [!note]- 原题截图
+> ![[王道OS 2.3 同步与互斥 综合 29.png]]
+
+> [!success]- 答案与解析
+> **答案：**
+>
+> 设 `position=3,pit=0,tree=0,mutex=1`。
+>
+> - 甲：`wait(position),wait(mutex)` 挖树坑，`signal(mutex),signal(pit)`。
+> - 乙：`wait(pit)` 放树苗，`signal(position)` 释放一个未使用树坑配额；再 `wait(mutex)` 用铁锹填土，`signal(mutex),signal(tree)`。
+> - 丙：`wait(tree)` 后浇水。
+>
+> **解析：** position限制未被使用的树坑少于3；pit保证有坑才能放苗，tree保证填土后才能浇水，mutex使甲乙互斥使用铁锹。
+
+## 关联
+
+- 知识点：
+- 题型：
