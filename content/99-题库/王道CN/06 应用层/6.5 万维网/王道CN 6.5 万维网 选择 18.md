@@ -1,0 +1,37 @@
+---
+source: 王道CN
+subject: CN
+chapter: 06 应用层
+section: 6.5 万维网
+qtype: 选择
+topic: []
+answer: B
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+18. （2022 统考真题）假设主机 H 通过 HTTP/1.1 请求浏览某 Web 服务器 S 上的 Web 页 news408.html，news408.html 引用了同目录下的 1 幅图像，news408.html 文件大小为 1MSS（最大段长），图像文件大小 3MSS，H 访问 S的往返时间 RTT = 10ms，忽略 HTTP 响应报文的首部开销和 TCP 段传输时延。
+
+若 H 已完成域名解析，则从 H 请求与 S 建立 TCP 连接时刻起，到接收到全部内容止，所需的时间至少是（）
+
+A. 30ms
+
+B. 40ms
+
+C. 50ms
+
+D. 60ms
+
+> [!note]- 原题截图
+> ![[王道CN 6.5 万维网 选择 18.png]]
+
+> [!success]- 答案与解析
+> **答案：** B
+>
+> **解析：** HTTP/1.1持续连接下第三次握手携请求，慢开始依次发送1、2、1MSS，最少4RTT=40ms。
+
+## 关联
+
+- 知识点：
+- 题型：

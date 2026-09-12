@@ -1,0 +1,35 @@
+---
+source: 王道CN
+subject: CN
+chapter: 05 传输层
+section: 5.3 TCP
+qtype: 选择
+topic: []
+answer: C
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+5. 下列几种描述中，（）不是 TCP 的特性。
+
+A. 比 UDP 开销大
+
+B. 强制重传错误分组
+
+C. 在 TCP 首部中有目标主机 IP 地址
+
+D. 把消息分成段并在目标主机中进行重组
+
+> [!note]- 原题截图
+> ![[王道CN 5.3 TCP 选择 05.png]]
+
+> [!success]- 答案与解析
+> **答案：** C
+>
+> **解析：** 目的IP地址属于IP首部而非TCP首部；TCP通过确认和重传保证可靠，并按MSS分段。
+
+## 关联
+
+- 知识点：
+- 题型：

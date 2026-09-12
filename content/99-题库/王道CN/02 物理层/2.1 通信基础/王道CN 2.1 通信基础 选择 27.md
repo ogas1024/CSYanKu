@@ -1,0 +1,35 @@
+---
+source: 王道CN
+subject: CN
+chapter: 02 物理层
+section: 2.1 通信基础
+qtype: 选择
+topic: []
+answer: C
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+27. （2023 统考真题）某无噪声理想信道带宽为 4MHz，采用 QAM 调制，若该信道的最大数据传输速率是 48Mb/s，则该信道采用的 QAM 调制方案是（）。
+
+A. QAM-16
+
+B. QAM-32
+
+C. QAM-64
+
+D. QAM-128
+
+> [!note]- 原题截图
+> ![[王道CN 2.1 通信基础 选择 27.png]]
+
+> [!success]- 答案与解析
+> **答案：** C
+>
+> **解析：** 48Mb/s=2×4MHz×log2V，得log2V=6，即64种状态，采用QAM-64。
+
+## 关联
+
+- 知识点：
+- 题型：
