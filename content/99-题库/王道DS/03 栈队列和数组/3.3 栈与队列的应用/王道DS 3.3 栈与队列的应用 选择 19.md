@@ -1,0 +1,35 @@
+---
+source: 王道DS
+subject: DS
+chapter: 03 栈队列和数组
+section: 3.3 栈与队列的应用
+qtype: 选择
+topic: []
+answer: A
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+19. 【2024 统考真题】与表达式 $x+y*(z-u)/v$ 等价的后缀表达式是（ ）。
+
+A. $xyzu - *v/+$
+
+B. $xyzu - v/*+$
+
+C. $+x/*y - zux$
+
+D. $+x*y / - zuv$
+
+> [!note]- 原题截图
+> ![[王道DS 3.3 栈与队列的应用 选择 19.png]]
+
+> [!success]- 答案与解析
+> **答案：** A
+>
+> **解析：** 先得到 `z-u` 的后缀形式 `zu-`，再与 `y` 相乘、除以 `v`，最后与 `x` 相加，得 `xyzu-*v/+`。
+
+## 关联
+
+- 知识点：
+- 题型：
