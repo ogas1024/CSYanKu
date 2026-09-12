@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: "null"
   locale: zh-CN
-  baseUrl: ogas1024.gihub.io/CSYanKu
+  baseUrl: ogas1024.github.io/CSYanKu
   ignorePatterns:
     - .obsidian
     - _templates
