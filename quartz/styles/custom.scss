@@ -31,3 +31,129 @@
     height: 14px;
   }
 }
+
+// Bases 速查表：题库表格在窄屏上的可读性
+.bases-table {
+  th {
+    white-space: nowrap;
+  }
+
+  // 宽屏下题目列保持单行；窄屏允许换行，好过横向滚动才能看到答案
+  // （quartz 基础样式给 a 设了 white-space: normal，必须直接命中链接）
+  @media not all and ($mobile) {
+    td:first-child a {
+      white-space: nowrap;
+    }
+  }
+
+  @media all and ($mobile) {
+    th,
+    td {
+      padding: 6px 8px;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.bases-view-tabs button {
+  font-family: var(--headerFont);
+}
+
+// Bases 速查表：客户端筛选条
+.qbank-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.qbank-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--gray);
+
+  > span {
+    font-family: var(--headerFont);
+    letter-spacing: 0.02em;
+  }
+}
+
+.qbank-filter-search,
+.qbank-filter-select {
+  font-family: var(--bodyFont);
+  font-size: 0.85rem;
+  color: var(--darkgray);
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 5px;
+  padding: 0.25rem 0.4rem;
+  max-width: 10rem;
+
+  &:focus-visible {
+    outline: 1px solid var(--secondary);
+  }
+
+  option:disabled {
+    color: var(--gray);
+  }
+}
+
+.qbank-filter-search {
+  min-width: 10rem;
+  max-width: 12rem;
+}
+
+.qbank-filter-select {
+  min-width: 5.5rem;
+}
+
+.qbank-filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: auto;
+}
+
+.qbank-filter-reset {
+  font-family: var(--bodyFont);
+  font-size: 0.8rem;
+  color: var(--gray);
+  background: none;
+  border: 1px solid var(--lightgray);
+  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  &:not(:disabled):hover {
+    color: var(--secondary);
+    border-color: var(--secondary);
+  }
+}
+
+.qbank-filter-count {
+  font-size: 0.8rem;
+  color: var(--gray);
+  white-space: nowrap;
+}
+
+.qbank-filtered-out {
+  display: none;
+}
+
+// 只有一个视图时不必显示切换标签，页面标题已经说明了
+.bases-view-tabs:has(button:only-child) {
+  display: none;
+}
+
+// 速查表目录下只有 .base 文件，folder-page 统计的是 md 笔记，永远显示「0 条笔记」
+body[data-slug="速查表/index"] .page-listing {
+  display: none;
+}

@@ -5,7 +5,7 @@ VAULT="../KaoyanVault"
 DEST="./content"
 
 echo "Syncing 99-题库..."
-rsync -a --delete --exclude='_images' --exclude='index.md' --exclude='_provenance.json' "$VAULT/99-题库/" "$DEST/99-题库/"
+rsync -a --delete --exclude='_images' --exclude='index.md' --exclude='速查表/' --exclude='*.base' --exclude='_provenance.json' "$VAULT/99-题库/" "$DEST/99-题库/"
 
 echo "Syncing _images..."
 rsync -a --delete --exclude='错题/' "$VAULT/_images/" "$DEST/_images/"

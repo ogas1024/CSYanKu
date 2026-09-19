@@ -1,0 +1,35 @@
+filters: source == "数二880"
+formulas:
+  qorder: if(qtype == "选择", 1, if(qtype == "填空", 2, if(qtype == "解答", 3, 4)))
+properties:
+  file.name:
+    displayName: 题目
+  subject:
+    displayName: 科目
+  chapter:
+    displayName: 章
+  level:
+    displayName: 篇
+  qtype:
+    displayName: 题型
+  answer:
+    displayName: 答案
+views:
+  - type: table
+    name: 按章
+    groupBy:
+      property: chapter
+      direction: ASC
+    order:
+      - file.name
+      - subject
+      - level
+      - qtype
+      - answer
+    sort:
+      - property: file.folder
+        direction: ASC
+      - property: formula.qorder
+        direction: ASC
+      - property: file.name
+        direction: ASC

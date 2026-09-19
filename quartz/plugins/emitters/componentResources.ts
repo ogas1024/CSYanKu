@@ -6,6 +6,8 @@ import { QuartzEmitterPlugin } from "../types"
 import spaRouterScript from "../../components/scripts/spa.inline"
 // @ts-ignore
 import popoverScript from "../../components/scripts/popover.inline"
+// @ts-ignore
+import basesFilterScript from "../../components/scripts/bases-filter.inline"
 import baseStyles from "../../styles/base.scss"
 import customStyles from "../../styles/custom.scss"
 import popoverStyle from "../../components/styles/popover.scss"
@@ -380,6 +382,9 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       })
     })
   `)
+
+  // Bases 速查表：客户端筛选条 + 界面文案中文化
+  componentResources.afterDOMLoaded.push(basesFilterScript)
 
   if (cfg.enableSPA) {
     componentResources.afterDOMLoaded.push(spaRouterScript)

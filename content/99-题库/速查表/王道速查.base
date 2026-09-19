@@ -1,0 +1,108 @@
+filters:
+  or:
+    - source == "王道DS"
+    - source == "王道CO"
+    - source == "王道OS"
+    - source == "王道CN"
+formulas:
+  qorder: if(qtype == "选择", 1, if(qtype == "填空", 2, if(qtype == "解答", 3, 4)))
+properties:
+  file.name:
+    displayName: 题目
+  source:
+    displayName: 题库
+  subject:
+    displayName: 科目
+  chapter:
+    displayName: 章
+  section:
+    displayName: 小节
+  level:
+    displayName: 篇
+  plate:
+    displayName: 板块
+  topic:
+    displayName: 考点
+  qtype:
+    displayName: 题型
+  answer:
+    displayName: 答案
+  score:
+    displayName: 分值
+  year:
+    displayName: 年份
+  answer_status:
+    displayName: 答案状态
+views:
+  - type: table
+    name: 王道 数据结构
+    filters: source == "王道DS"
+    groupBy:
+      property: chapter
+      direction: ASC
+    order:
+      - file.name
+      - section
+      - qtype
+      - answer
+    sort:
+      - property: file.folder
+        direction: ASC
+      - property: formula.qorder
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 王道 计算机组成原理
+    filters: source == "王道CO"
+    groupBy:
+      property: chapter
+      direction: ASC
+    order:
+      - file.name
+      - section
+      - qtype
+      - answer
+    sort:
+      - property: file.folder
+        direction: ASC
+      - property: formula.qorder
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 王道 操作系统
+    filters: source == "王道OS"
+    groupBy:
+      property: chapter
+      direction: ASC
+    order:
+      - file.name
+      - section
+      - qtype
+      - answer
+    sort:
+      - property: file.folder
+        direction: ASC
+      - property: formula.qorder
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 王道 计算机网络
+    filters: source == "王道CN"
+    groupBy:
+      property: chapter
+      direction: ASC
+    order:
+      - file.name
+      - section
+      - qtype
+      - answer
+    sort:
+      - property: file.folder
+        direction: ASC
+      - property: formula.qorder
+        direction: ASC
+      - property: file.name
+        direction: ASC

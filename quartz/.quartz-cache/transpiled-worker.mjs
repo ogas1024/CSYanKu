@@ -1224,6 +1224,14 @@ var init_popover_inline = __esm({
   }
 });
 
+// quartz/components/scripts/bases-filter.inline.ts
+var bases_filter_inline_default;
+var init_bases_filter_inline = __esm({
+  "quartz/components/scripts/bases-filter.inline.ts"() {
+    bases_filter_inline_default = "";
+  }
+});
+
 // quartz/styles/base.scss
 var base_default;
 var init_base = __esm({
@@ -1879,6 +1887,7 @@ function addGlobalPageResources(ctx, componentResources) {
       })
     })
   `);
+  componentResources.afterDOMLoaded.push(bases_filter_inline_default);
   if (cfg.enableSPA) {
     componentResources.afterDOMLoaded.push(spa_inline_default);
   } else {
@@ -1897,6 +1906,7 @@ var init_componentResources = __esm({
     init_path();
     init_spa_inline();
     init_popover_inline();
+    init_bases_filter_inline();
     init_base();
     init_custom();
     init_popover();

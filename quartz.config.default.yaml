@@ -213,7 +213,10 @@ plugins:
       priority: 25
       display: mobile-only
   - source: "@quartz-community/bases-page"
-    enabled: false
+    enabled: true
+    options:
+      defaultViewType: table
+      linkResolution: shortest
   - source: "@quartz-community/note-properties"
     enabled: true
     options:

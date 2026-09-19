@@ -1,0 +1,70 @@
+filters: source == "数十年"
+formulas:
+  qorder: if(qtype == "选择", 1, if(qtype == "填空", 2, if(qtype == "解答", 3, 4)))
+  porder: if(plate == "十年真题", 1, if(plate == "方法探究", 2, 3))
+properties:
+  file.name:
+    displayName: 题目
+  source:
+    displayName: 题库
+  subject:
+    displayName: 科目
+  chapter:
+    displayName: 章
+  section:
+    displayName: 小节
+  level:
+    displayName: 篇
+  plate:
+    displayName: 板块
+  topic:
+    displayName: 考点
+  qtype:
+    displayName: 题型
+  answer:
+    displayName: 答案
+  score:
+    displayName: 分值
+  year:
+    displayName: 年份
+  answer_status:
+    displayName: 答案状态
+views:
+  - type: table
+    name: 按章节
+    groupBy:
+      property: chapter
+      direction: ASC
+    order:
+      - file.name
+      - section
+      - plate
+      - qtype
+      - topic
+      - answer_status
+    sort:
+      - property: file.folder
+        direction: ASC
+      - property: formula.porder
+        direction: ASC
+      - property: formula.qorder
+        direction: ASC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 按考点
+    groupBy:
+      property: topic
+      direction: ASC
+    order:
+      - file.name
+      - chapter
+      - plate
+      - qtype
+    sort:
+      - property: topic
+        direction: ASC
+      - property: file.folder
+        direction: ASC
+      - property: file.name
+        direction: ASC

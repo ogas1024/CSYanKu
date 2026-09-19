@@ -5,3 +5,7 @@ public/
 # 题目无关文件：流水线 provenance 与未发布的错题扫描件
 content/99-题库/_provenance.json
 content/_images/错题/
+
+# 本地预览配置，不进入发布仓库
+.claude/
+tsconfig.tsbuildinfo

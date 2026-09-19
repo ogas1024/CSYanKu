@@ -1,0 +1,57 @@
+filters: source == "408真题"
+formulas:
+  qorder: if(qtype == "选择", 1, if(qtype == "填空", 2, if(qtype == "解答", 3, 4)))
+properties:
+  file.name:
+    displayName: 题目
+  subject:
+    displayName: 科目
+  chapter:
+    displayName: 章
+  qtype:
+    displayName: 题型
+  answer:
+    displayName: 答案
+  score:
+    displayName: 分值
+  year:
+    displayName: 年份
+views:
+  - type: table
+    name: 按年份
+    groupBy:
+      property: year
+      direction: DESC
+    order:
+      - file.name
+      - subject
+      - chapter
+      - qtype
+      - score
+      - answer
+    sort:
+      - property: year
+        direction: DESC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 按科目
+    groupBy:
+      property: subject
+      direction: ASC
+    order:
+      - file.name
+      - subject
+      - chapter
+      - qtype
+      - score
+      - answer
+    sort:
+      - property: subject
+        direction: ASC
+      - property: chapter
+        direction: ASC
+      - property: year
+        direction: DESC
+      - property: file.name
+        direction: ASC

@@ -43,6 +43,8 @@ CSYanKu/              ← 本项目（独立 git repo）
 - `quartz.config.default.yaml` — 站点配置（baseUrl、插件、主题、ignorePatterns）
 - `quartz/plugins/emitters/componentResources.ts` — 注入的前端脚本（复制按钮等）
 - `quartz/styles/custom.scss` — 自定义样式
+- `content/99-题库/速查表/*.base` — 站点专属 Bases 速查表，一份资料一页（408真题 / 数一真题 / 数二真题 / 数一880 / 数二880 / 数十年 / 王道 / relax1000），`sync.sh` 已排除
+- `quartz/components/scripts/bases-filter.inline.ts` — Bases 表格的客户端筛选条（下拉 + 表内搜索 + 级联置灰）与界面文案中文化
 - `sync.sh` — rsync vault → content（题库 + 图片）
 - `deploy.sh` — 一键 sync + commit + push
 - `.github/workflows/deploy.yml` — GitHub Actions 部署到 Pages
@@ -67,3 +69,5 @@ npx quartz build --serve -d content/99-题库
 - `_images` 不在 `ignorePatterns` 中（图片需要被 Quartz 处理），但在 explorer 的 `filterFn` 中隐藏
 - `npm install` 必须加 `--legacy-peer-deps`
 - 部署后约 2 分钟生效
+- Bases 的表格是构建期静态渲染的，插件本身没有交互筛选；筛选条是自己加的一层，靠单元格上的 `data-value` 和分组标题对已渲染的行做显示/隐藏——改动 `.base` 的列会直接改变可筛选的维度
+- Bases：`@quartz-community/bases-page` 的 `groupBy.direction` 无效（分组顺序 = 排序后首次出现顺序），要控制分组顺序必须把 groupBy 的属性放进 `sort` 第一位；`summaries` 的 `Count` 未实现（会原样打印 `Count`），计数用 `Filled`；插件只内置 en-US 文案，中文化在 `bases-filter.inline.ts` 里一并处理
