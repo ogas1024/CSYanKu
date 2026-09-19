@@ -1,0 +1,35 @@
+---
+source: 王道CO
+subject: CO
+chapter: 02 数据的表示和运算
+section: 2.1 数制与编码
+qtype: 选择
+topic: []
+answer: B
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+26. 【P31】16位补码整数0x8FA0扩展为32位应该是（）
+
+A. 0x0000 8FA0
+
+B. 0xFFFF 8FA0
+
+C. 0xFFFF FFA0
+
+D. 0x8000 8FA0
+
+> [!note]- 原题截图
+> ![[王道CO 2.1 数制与编码 选择 26.webp]]
+
+> [!success]- 答案与解析
+> **答案：** B
+>
+> **解析：** 16 位补码 0x8FA0 的最高位为 1，是负数。扩展到 32 位时需符号扩展，即高 16 位全补 1，得到 0xFFFF8FA0。
+
+## 关联
+
+- 知识点：
+- 题型：

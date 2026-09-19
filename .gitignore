@@ -1,0 +1,7 @@
+node_modules/
+public/
+.DS_Store
+
+# 题目无关文件：流水线 provenance 与未发布的错题扫描件
+content/99-题库/_provenance.json
+content/_images/错题/

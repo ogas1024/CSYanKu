@@ -1,0 +1,37 @@
+---
+source: 王道CO
+subject: CO
+chapter: 03 存储系统
+section: 3.3 主存储器与CPU的连接
+qtype: 选择
+topic: []
+answer: C
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+13. 【P101】【2016 统考真题】某存储器容量为 64KB，按字节编址，地址 4000H~5FFFH 为 ROM 区，其余为 RAM 区。
+
+若采用 8K×4 位的 SRAM 芯片进行设计，则需要该芯片的数量是（）
+
+A. 7
+
+B. 8
+
+C. 14
+
+D. 16
+
+> [!note]- 原题截图
+> ![[王道CO 3.3 主存储器与CPU的连接 选择 13.webp]]
+
+> [!success]- 答案与解析
+> **答案：** C
+>
+> **解析：** ROM 区 4000H–5FFFH 容量为 8KB，故 RAM 区容量为 64KB-8KB=56KB。8K*4 位 SRAM 需位扩展两片一组，共需 14 片。
+
+## 关联
+
+- 知识点：
+- 题型：

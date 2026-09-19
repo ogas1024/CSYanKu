@@ -1,0 +1,43 @@
+---
+source: 王道CN
+subject: CN
+chapter: 06 应用层
+section: 6.4 电子邮件
+qtype: 选择
+topic: []
+answer: A
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+9. （2013 统考真题）下列关于 SMTP 的叙述中，正确的是（）
+
+I. 只支持传输 7 比特 ASCII 码内容
+
+II. 支持在邮件服务器之间发送邮件
+
+III. 支持从用户代理向邮件服务器发送邮件
+
+IV. 支持从邮件服务器向用户代理发送邮件
+
+A. 仅 I、II 和 III
+
+B. 仅 I、II 和 IV
+
+C. 仅 I、III 和 IV
+
+D. 仅 II、III 和 IV
+
+> [!note]- 原题截图
+> ![[王道CN 6.4 电子邮件 选择 09.webp]]
+
+> [!success]- 答案与解析
+> **答案：** A
+>
+> **解析：** SMTP用于用户代理到发送服务器以及服务器之间发信，并且原生只支持7位ASCII。
+
+## 关联
+
+- 知识点：
+- 题型：

@@ -1,0 +1,35 @@
+---
+source: 王道CN
+subject: CN
+chapter: 02 物理层
+section: 2.1 通信基础
+qtype: 选择
+topic: []
+answer: C
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+26. （2022 统考真题）在一条带宽为 $200\,\mathrm{kHz}$ 的无噪声信道上，若采用 4 个幅值的 ASK 调制，则该信道的最大数据传输速率是（）。
+
+A. 200kb/s
+
+B. 400kb/s
+
+C. 800kb/s
+
+D. 1600kb/s
+
+> [!note]- 原题截图
+> ![[王道CN 2.1 通信基础 选择 26.webp]]
+
+> [!success]- 答案与解析
+> **答案：** C
+>
+> **解析：** 4幅值ASK有4状态、每码元2bit；200kHz无噪声信道最大800kb/s。
+
+## 关联
+
+- 知识点：
+- 题型：

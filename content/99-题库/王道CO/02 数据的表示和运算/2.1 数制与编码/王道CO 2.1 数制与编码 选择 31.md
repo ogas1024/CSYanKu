@@ -1,0 +1,42 @@
+---
+source: 王道CO
+subject: CO
+chapter: 02 数据的表示和运算
+section: 2.1 数制与编码
+qtype: 选择
+topic: []
+answer: A
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+31. 【P32】【2019 统考真题】考虑以下 C 语言代码：
+
+```c
+unsigned short usi = 65535;
+short si = usi;
+```
+
+执行上述程序段后，`si` 的值是（）
+
+A. -1
+
+B. -32767
+
+C. -32768
+
+D. -65535
+
+> [!note]- 原题截图
+> ![[王道CO 2.1 数制与编码 选择 31.webp]]
+
+> [!success]- 答案与解析
+> **答案：** A
+>
+> **解析：** unsigned short 的 65535 位模式为 16 个 1。赋给同宽 short 后位模式不变，在补码机器上全 1 表示 -1。
+
+## 关联
+
+- 知识点：
+- 题型：

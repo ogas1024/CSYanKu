@@ -1,0 +1,50 @@
+---
+source: 王道CO
+subject: CO
+chapter: 02 数据的表示和运算
+section: 2.3 浮点数的表示与运算
+qtype: 选择
+topic: []
+answer: D
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+30. 【P70】【2012 统考真题】某计算机存储器按字节编址，采用小端方式存放数据。
+
+假定编译器规定 int 型和 short 型长度分别为 32 位和 16 位，并且数据按边界对齐存储。
+
+某 C 语言程序段如下：
+
+```c
+struct {
+    int a;
+    char b;
+    short c;
+} record;
+record.a = 273;
+```
+
+若 `record` 变量的首地址为 `0xC008`，地址 `0xC008` 中的内容及 `record.c` 的地址分别为（）
+
+A. 0x00，0xC00D
+
+B. 0x00，0xC00E
+
+C. 0x11，0xC00D
+
+D. 0x11，0xC00E
+
+> [!note]- 原题截图
+> ![[王道CO 2.3 浮点数的表示与运算 选择 30.webp]]
+
+> [!success]- 答案与解析
+> **答案：** D
+>
+> **解析：** record.a=273=00000111H，小端在 0xC008 存 11H。a 占 4 字节，b 占 1 字节，填充 1 字节后c 对齐到 0xC00E。
+
+## 关联
+
+- 知识点：
+- 题型：

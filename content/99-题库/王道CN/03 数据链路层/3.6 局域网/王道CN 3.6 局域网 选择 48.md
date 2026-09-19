@@ -1,0 +1,37 @@
+---
+source: 王道CN
+subject: CN
+chapter: 03 数据链路层
+section: 3.6 局域网
+qtype: 选择
+topic: []
+answer: B
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+48. 【2024 统考真题】在采用 CSMA/CA 协议的 802.11 无线局域网中，DIFS = 128μs，SIFS = 28μs，RTS 帧、CTS 帧和 ACK 帧的传输时延分别是 3μs、2μs 和 2μs，忽略信号传播时延。
+
+若主机 A 要向 AP 发送一个总长度为 1998 B 的数据帧，无线链路带宽为 54Mb/s，则隐藏站 B 收到 AP 发送的 CTS 帧时，设置的网络分配向量 NAV 的值是（）
+
+A. $326\mu s$
+
+B. $354\mu s$
+
+C. $385\mu s$
+
+D. $513\mu s$
+
+> [!note]- 原题截图
+> ![[王道CN 3.6 局域网 选择 48.webp]]
+
+> [!success]- 答案与解析
+> **答案：** B
+>
+> **解析：** 1998B数据帧发送时延为296μs；隐藏站收到CTS后NAV=SIFS+DATA+SIFS+ACK=28+296+28+2=354μs。
+
+## 关联
+
+- 知识点：
+- 题型：

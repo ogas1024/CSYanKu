@@ -1,0 +1,35 @@
+---
+source: 王道DS
+subject: DS
+chapter: 05 树与二叉树
+section: 5.3 二叉树的遍历和线索二叉树
+qtype: 选择
+topic: []
+answer: C
+answer_status: 已录入
+tags: []
+---
+## 题干
+
+10. 一棵完全二叉树的后序遍历序列为 $CDBFGEA$，则其先序遍历序列是（ ）。
+
+A. $CBDAFEG$
+
+B. $ABECDFG$
+
+C. $ABCDEFG$
+
+D. 无法确定
+
+> [!note]- 原题截图
+> ![[王道DS 5.3 二叉树的遍历和线索二叉树 选择 10.webp]]
+
+> [!success]- 答案与解析
+> **答案：** C
+>
+> **解析：** 7 个结点的完全二叉树结构唯一。由后序 CDBFGEA 可确定根为 A，左、右子树的根分别为 B、C，先序序列为 ABCDEFG。
+
+## 关联
+
+- 知识点：
+- 题型：
