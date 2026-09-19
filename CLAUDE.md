@@ -2,7 +2,7 @@
 
 # CSYanKu — 考研题库静态站
 
-Quartz v5 静态站，发布 vault 中 99-题库 的 7400+ 道题，仅供朋友在线浏览。
+Quartz v5 静态站，发布 vault 中 99-题库 的 10074 道题，仅供朋友在线浏览。
 线上地址：`https://ogas1024.github.io/CSYanKu`
 
 ---
