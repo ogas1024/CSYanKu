@@ -10,10 +10,11 @@ Quartz v5 静态站，发布 vault 中 99-题库 的 10074 道题，仅供朋友
 ## 架构
 
 ```
-KaoyanVault/          ← Obsidian vault（权威源）
-  99-题库/
-  _images/
-CSYanKu/              ← 本项目（独立 git repo）
+~/Projects/KaoYan/        ← 考研入口
+├─ KaoYanVault/           ← Obsidian vault（权威源）
+│    99-题库/
+│    _images/
+└─ Sites/CSYanKu/         ← 本项目（独立 git repo；sync.sh 从 ../../KaoYanVault 读取，须在本目录运行）
   content/            ← sync.sh 从 vault rsync 过来的副本
   quartz/             ← Quartz 源码（含自定义脚本/样式）
   sync.sh             ← vault → content 同步

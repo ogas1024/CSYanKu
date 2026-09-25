@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-VAULT="../KaoyanVault"
+VAULT="../../KaoYanVault"
 DEST="./content"
 
 echo "Syncing 99-题库..."
