@@ -33,3 +33,4 @@ D. 预处理$\rightarrow$汇编$\rightarrow$链接$\rightarrow$编译
 
 - 知识点：
 - 题型：
+- 真题：[[408真题 2022 T20]]

@@ -33,3 +33,4 @@ D. $(\mathrm{SYN}=0,\mathrm{ACK}=0,\mathrm{seq}=11220,\mathrm{ack}=11220)$
 
 - 知识点：
 - 题型：
+- 真题：[[408真题 2011 T39]]

@@ -27,7 +27,7 @@ B. 仅 I、II、IV
 
 C. 仅 I、III、IV
 
-D. 仅 II、III、IV
+D. I、II、III、IV
 
 > [!note]- 原题截图
 > ![[王道CO 2.3 浮点数的表示与运算 选择 33.webp]]
@@ -41,3 +41,4 @@ D. 仅 II、III、IV
 
 - 知识点：
 - 题型：
+- 真题：[[408真题 2015 T14]]

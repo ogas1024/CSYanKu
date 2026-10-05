@@ -35,3 +35,4 @@ D. `q=h->next; h->next=q->next; if (p==q) p=h; free(q);`
 
 - 知识点：
 - 题型：
+- 真题：[[408真题 2021 T01]]

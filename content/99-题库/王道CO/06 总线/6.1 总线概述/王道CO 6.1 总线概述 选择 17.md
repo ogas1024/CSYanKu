@@ -33,3 +33,4 @@ D. ISA、EISA、PCI、PCI-Express
 
 - 知识点：
 - 题型：
+- 真题：[[408真题 2010 T20]]

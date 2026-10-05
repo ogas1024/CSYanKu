@@ -35,3 +35,4 @@ D. `p->next->prev=p->prev; p->prev->next=p->next; free(p);`
 
 - 知识点：
 - 题型：
+- 真题：[[408真题 2016 T02]]

@@ -82,3 +82,4 @@ void cmpCountSort(int a[], int b[], int n) {
 
 - 知识点：
 - 题型：
+- 真题：[[408真题 2021 T42]]
