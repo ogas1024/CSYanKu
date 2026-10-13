@@ -158,7 +158,12 @@ plugins:
       groupOptions:
         grow: true
   - source: "@quartz-community/backlinks"
-    enabled: false
+    enabled: true
+    options:
+      hideWhenEmpty: true
+    layout:
+      position: right
+      priority: 30
   - source: "@quartz-community/article-title"
     enabled: true
     layout:
@@ -186,7 +191,11 @@ plugins:
       priority: 30
       group: toolbar
   - source: "@quartz-community/reader-mode"
-    enabled: false
+    enabled: true
+    layout:
+      position: left
+      priority: 35
+      group: toolbar
   - source: "@quartz-community/breadcrumbs"
     enabled: true
     layout:
