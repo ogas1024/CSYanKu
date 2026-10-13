@@ -15,7 +15,7 @@ tags: []
 
 A. $\mathrm{CF}+\mathrm{OF}=1$
 
-B. $\overline{\mathrm{SF}}+\mathrm{OF}=1$
+B. $\overline{\mathrm{SF}}+\mathrm{ZF}=1$
 
 C. $\overline{\mathrm{CF}+\mathrm{ZF}}=1$
 
